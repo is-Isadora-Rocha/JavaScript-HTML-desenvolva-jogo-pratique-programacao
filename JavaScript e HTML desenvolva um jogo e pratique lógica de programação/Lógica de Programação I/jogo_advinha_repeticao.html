@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia (n) {
+        return Math.round(Math.random() * n);
+    }
+
+    function jogarNovamente(){
+        mostra("Aperte F5 para jogar novamente.");
+    }
+
+    var numPensado = sorteia(10); //0 a 9
+    var tentativas = 1;
+
+    while(tentativas <= 3) {
+        var chute = parseInt(prompt("Pensei em um número, tente advinhar!"));
+
+    if (chute == numPensado) {
+
+        mostra("Uau! Melhor que o chute do Pelé! Você acertou, pensei no número " + numPensado);
+        
+        break;
+
+    } else {
+       
+        mostra("Chuta fofo! Você errou!");
+
+    }
+    tentativas++;
+}
+    mostra("FIM!");
+    jogarNovamente();
+    
+
+</script>
